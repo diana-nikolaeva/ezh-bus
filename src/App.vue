@@ -10,7 +10,6 @@ import ServiceComponent from '@/components/service-component.vue'
     <header-block></header-block>
   </header>
   <our-services></our-services>
-  <service-component></service-component>
 </template>
 
 <style scoped>

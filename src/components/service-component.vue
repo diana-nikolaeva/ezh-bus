@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
-    <div class="service black" v-for="item in serviceBlocks" :key="item.title">
-      <img :src="item.imgBcgr" alt="">
-      <h3>{{item.title}}</h3>
-      <a href="{{item.link}}">Подробнее</a>
+    <div class="service black">
+      <img :src="imgPath" alt="">
+      <h3>{{title}}</h3>
+      <a :href="link">Подробнее</a>
     </div>
-  </div>
 
 </template>
 
@@ -15,8 +13,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
   margin: 0 auto;
+
   .service{
     height: 296px;
     position: relative;
@@ -68,7 +66,7 @@
     border: 1px solid #535353;
     width: 298px;
     flex-grow: 0;
-    background:linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);;
+    background:linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
     a{
       color:#fff;
     }
@@ -82,47 +80,15 @@
 
 }
 
+
 </style>
 <script setup lang="ts">
-import img1 from '../assets/service-img/service1.png';
-import img2 from '../assets/service-img/service2.png';
-import img4 from '../assets/service-img/service4.png';
-import img5 from '../assets/service-img/service5.png';
-import img6 from '../assets/service-img/service6.png';
-
-
-
-  const serviceBlocks = [
-    {
-      imgBcgr: img1,
-      title:'развозка сотрудников',
-      link:'/',
-    },
-    {
-      imgBcgr: img2,
-      title:'детские перевозки',
-      link:''
-    },
-    {
-      imgBcgr: '',
-      title:'аренда авто с водителем',
-      link:''
-    },
-    {
-      imgBcgr: img4,
-      title:'обслуживание мероприятий',
-      link:''
-    },
-    {
-      imgBcgr: img5,
-      title:'трансферные перевозки',
-      link:''
-    },
-    {
-      imgBcgr: img6,
-      title:'туристическая развозка',
-      link:''
-    }
-  ]
+defineProps(
+  {
+    imgPath: String,
+    link: String,
+    title:String
+  }
+);
 
 </script>
