@@ -23,7 +23,7 @@
 <style scoped>
 .form-container{
   background: linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
-  padding: 44px 27px 0 27px;
+  padding: 44px 27px 31px 27px;
   input, select, textarea{
     height: 56px;
     border-radius: 6px;

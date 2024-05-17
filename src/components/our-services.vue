@@ -1,8 +1,10 @@
 <template>
-  <h2>услуги.</h2>
+  <section class="our-services">
+    <h2>услуги.</h2>
+    <!--  <div class="container">контейнер для блока услуг на десктопе</div>-->
+    <CarouselBlock></CarouselBlock>
+  </section>
 
-<!--  <div class="container">контейнер для блока услуг на десктопе</div>-->
-  <CarouselBlock></CarouselBlock>
 </template>
 
 <style>

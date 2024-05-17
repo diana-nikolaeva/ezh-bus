@@ -2,6 +2,7 @@
 import HeaderBlock from '@/components/header-block.vue'
 import OurServices from '@/components/our-services.vue'
 import CalculateBlock from '@/components/calculate-block.vue'
+import OurCars from '@/components/our-cars.vue'
 
 </script>
 
@@ -11,6 +12,7 @@ import CalculateBlock from '@/components/calculate-block.vue'
   </header>
   <our-services></our-services>
   <calculate-block></calculate-block>
+  <our-cars></our-cars>
 </template>
 
 <style scoped>
