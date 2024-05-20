@@ -12,4 +12,37 @@ body{
     margin:0;
     padding-top: 27px;
   }
+  input, select, textarea{
+    height: 56px;
+    border-radius: 6px;
+    background: #F2F2F2;
+    width: 100%;
+    color:  #232323;
+    font-family: SVN-Gilroy,sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 180.9%;
+    margin-bottom: 20px;
+    border: 0;
+    box-sizing: border-box;
+    padding-left: 20px;
+  }
+  .btn{
+    text-align: center;
+    font-family: "Soyuz Grotesk",sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.56px;
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 280px;
+    height: 76px;
+    padding: 10px 26px;
+    justify-content: center;
+    align-items: center;
+  }
 }

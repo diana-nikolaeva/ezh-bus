@@ -30,7 +30,7 @@ defineProps(
         </div>
         <div class="number-seats">{{seats}}</div>
       </div>
-      <button class="order-car-btn">заказать</button>
+      <button class="order-car-btn btn">заказать</button>
     </div>
   </div>
 
@@ -119,18 +119,9 @@ defineProps(
         padding: 10px;
       }
       .order-car-btn{
-        width: 100%;
-        height: 76px;
-        padding: 10px 26px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
         background: linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
         box-shadow: 0px 6px 0px 0px #6B1111, 0px 30px 40px 0px rgba(89, 15, 0, 0.50);
         color: white;
-        font-size: 26px;
-        font-family: "Soyuz Grotesk",sans-serif;
-        border: 0;
         margin-top: 19px;
         margin-bottom: 40px;
       }
