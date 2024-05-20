@@ -9,6 +9,10 @@
 
 <style>
 
+  h2{
+    padding-bottom: 22px;
+  }
+
 </style>
 <script setup lang="ts">
 

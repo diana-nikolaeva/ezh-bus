@@ -53,10 +53,10 @@ const ourCars = [
 <style scoped>
   .our-cars{
     background: #DE4C2F;
-    padding: 27px  20px 19px 20px;
+    padding: 0  20px 19px 20px;
     h2{
       color: #fff;
-      margin: 0 0 20px 0;
+      padding-bottom: 19px;
     }
   }
   .container-car-block{

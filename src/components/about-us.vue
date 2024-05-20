@@ -20,6 +20,9 @@
 
 <style scoped>
  .about-us-block{
+   h2{
+     padding-bottom: 17px;
+   }
    .banner{
      background: #721111;
      padding-top: 30px;
