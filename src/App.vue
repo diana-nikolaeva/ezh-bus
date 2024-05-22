@@ -5,7 +5,7 @@ import CalculateBlock from '@/components/calculate-block.vue'
 import OurCars from '@/components/our-cars.vue'
 import AboutUs from '@/components/about-us.vue'
 import ContactsBlock from '@/components/contacts-block.vue'
-import RequestBlock from '@/assets/request-block.vue'
+import RequestBlock from '@/components/footer-block.vue'
 
 </script>
 
@@ -18,7 +18,9 @@ import RequestBlock from '@/assets/request-block.vue'
   <our-cars></our-cars>
   <about-us></about-us>
   <contacts-block></contacts-block>
-  <request-block></request-block>
+  <footer>
+    <request-block></request-block>
+  </footer>
 </template>
 
 <style scoped>

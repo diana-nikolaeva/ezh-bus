@@ -1,8 +1,12 @@
 <template>
-  <header>
-    <phone-menu-opened></phone-menu-opened>
-    <main-menu></main-menu>
-  </header>
+    <phone-menu-opened
+      v-if="menuIsOpened"
+      @closeMenu="menuPhoneClose"
+    ></phone-menu-opened>
+    <phone-menu-close
+      v-if ="!menuIsOpened"
+      @openMenu="onOpenMenu"
+    ></phone-menu-close>
 </template>
 
 <style>
@@ -10,7 +14,17 @@
 
 }
 </style>
-<script setup lang="ts">
-import MainMenu from '@/components/main-menu.vue'
+<script setup>
+import { ref } from 'vue';
+let menuIsOpened = ref(false);
+
+function onOpenMenu(){
+  menuIsOpened.value = true;
+}
+function menuPhoneClose(){
+  menuIsOpened.value = false;
+}
+
+import PhoneMenuClose from '@/components/phone-menu-close.vue'
 import PhoneMenuOpened from '@/components/phone-menu-opened.vue'
 </script>

@@ -1,14 +1,12 @@
 <script setup lang="ts">
 
-const menuItems = [
-  {titleMenuItem: 'Главная'},
-  {titleMenuItem: 'Услуги'},
-  {titleMenuItem: 'Калькулятор'},
-  {titleMenuItem: 'Автопарк'},
-  {titleMenuItem: 'О нас'},
-  {titleMenuItem: 'Контакты'},
-]
 
+import ListMenu from '@/components/list-menu.vue'
+
+const emit = defineEmits(['closeMenu'])
+function onClick() {
+  emit('closeMenu');
+}
 </script>
 
 <template>
@@ -18,17 +16,12 @@ const menuItems = [
         <img src="../assets/logo-mobile.png" alt="logo-ezh-bus">
       </div>
       <div class="menu-title">меню</div>
-      <button class="close-btn">
+      <button class="close-btn" @click="onClick">
         <img src="../assets/btn-close.png" alt="close">
       </button>
     </div>
-    <ul class="main-menu-phone">
-      <li class="menu-item selected" :key="item.titleMenuItem" v-for="item in menuItems" >
-        <a href="/{{item.titleMenuItem}}">{{item.titleMenuItem}}</a>
-      </li>
-    </ul>
+    <list-menu></list-menu>
   </nav>
-
 </template>
 
 <style>
@@ -68,32 +61,6 @@ nav{
       top:10px;
       img{
         height: 100%;
-      }
-    }
-  }
-  .main-menu-phone{
-    padding: 10px;
-    margin-top: 0;
-    .menu-item{
-      list-style: none;
-      text-align: center;
-      margin-bottom: 30px;
-      a{
-        color:#fff;
-        text-decoration: none;
-        font-family: SVN-Gilroy,sans-serif;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1;
-        padding: 5px 0;
-
-      }
-
-    }
-    .menu-item.selected{
-      a{
-        border-bottom: #fff solid 5px;
       }
     }
   }

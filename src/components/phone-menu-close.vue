@@ -4,8 +4,9 @@
       <div class="logo">
         <img src="../assets/logo.png" alt="logo-ezh-bus">
       </div>
+      <list-menu class="list-menu-desktop"></list-menu>
       <div class="phone-number">+7 (812) 500-65-65 </div>
-      <button class="btn-open-phone-menu">
+      <button class="btn-open-phone-menu" @click="onClick">
         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18" fill="none">
           <rect width="21" height="2.47059" fill="#DE4C2F"/>
           <rect y="7.41211" width="21" height="2.47059" fill="#DE4C2F"/>
@@ -16,7 +17,7 @@
   </nav>
 </template>
 
-<style>
+<style scoped>
 .phone-menu-close{
   padding: 12px;
   .main-menu{
@@ -29,6 +30,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    max-width: 1250px;
+    @media only screen and (min-width: 865px){
+      height: 93px;
+      margin: 0 auto;
+    }
     .logo{
       width: 54px;
       img{
@@ -46,11 +52,25 @@
     }
   .btn-open-phone-menu{
     border: 0;
+    @media only screen and (min-width: 865px){
+      display: none;
+    }
   }
+    .list-menu-desktop{
+      display: none;
+      @media only screen and (min-width: 865px){
+        display: flex;
+      }
+    }
   }
 }
 
 </style>
 <script setup lang="ts">
+import ListMenu from '@/components/list-menu.vue'
 
+const emit = defineEmits(['openMenu'])
+  function onClick() {
+    emit('openMenu');
+  }
 </script>

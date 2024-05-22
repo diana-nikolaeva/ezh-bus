@@ -6,7 +6,6 @@ import ServiceComponent from '@/components/service-component.vue'
 
 import img1 from '../assets/service-img/service1.png';
 import img2 from '../assets/service-img/service2.png';
-import img4 from '../assets/service-img/service4.png';
 import img5 from '../assets/service-img/service5.png';
 import img6 from '../assets/service-img/service6.png';
 import img7 from '../assets/service-img/service6-phone.png';

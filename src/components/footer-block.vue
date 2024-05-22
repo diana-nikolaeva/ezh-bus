@@ -12,6 +12,9 @@
       <button type="submit" class="request-btn btn">оставить заявку</button>
     </form>
     <div class="person-data">Нажимая на кнопку "Отправить”, я соглашаюсь условиями обработки персональных данных</div>
+    <div class="logo-footer">
+      <img src="../assets/logo-footer.png" alt="">
+    </div>
   </section>
 </template>
 
@@ -51,7 +54,17 @@
       font-style: normal;
       font-weight: 400;
       line-height: 130%;
-      margin-bottom: 20px;
+    }
+    .logo-footer{
+      width: 140px;
+      height: 142px;
+      margin: 0 auto;
+      position: relative;
+      img{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
     }
   }
 
