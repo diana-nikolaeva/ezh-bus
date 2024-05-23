@@ -25,15 +25,19 @@
     background: #fff;
     border-radius: 10px;
     box-shadow: 0px 6px 40px 0px rgba(142, 24, 0, 0.50);
-    height: 33px;
+    height: 57px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 1250px;
+    width: 1250px;
+    box-sizing: border-box;
     @media only screen and (min-width: 865px){
       height: 93px;
       margin: 0 auto;
+    }
+    @media only screen and (max-width: 1250px){
+      width: 100%;
     }
     .logo{
       width: 54px;

@@ -6,6 +6,17 @@ import OurCars from '@/components/our-cars.vue'
 import AboutUs from '@/components/about-us.vue'
 import ContactsBlock from '@/components/contacts-block.vue'
 import RequestBlock from '@/components/footer-block.vue'
+import { onMounted, onBeforeUnmount, ref } from 'vue';
+
+const isPhone = ref();
+const onResize = () => {
+
+  isPhone.value = window.innerWidth <= 845;
+}
+
+onMounted(() => window.addEventListener('resize', onResize));
+onBeforeUnmount(() => window.removeEventListener('resize', onResize));
+onResize();
 
 </script>
 
@@ -13,7 +24,7 @@ import RequestBlock from '@/components/footer-block.vue'
   <header>
     <header-block></header-block>
   </header>
-  <our-services></our-services>
+  <our-services :is-phone="isPhone"></our-services>
   <calculate-block></calculate-block>
   <our-cars></our-cars>
   <about-us></about-us>

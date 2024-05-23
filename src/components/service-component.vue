@@ -8,13 +8,6 @@
 </template>
 
 <style scoped>
-.container{
-  max-width: 1250px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-
   .service{
     height: 296px;
     position: relative;
@@ -23,6 +16,10 @@
     margin-right: 20px;
     flex-grow: 1;
     max-width: 400px;
+    overflow: hidden;
+    @media only screen and (max-width: 1250px){
+      width: 400px;
+    }
 
     h3{
       color:  #FFF;
@@ -54,12 +51,25 @@
   }
   .service:last-child, .service:nth-child(3){
     margin-right: 0;
+    @media only screen and (max-width: 1250px){
+      margin-right: 20px;
+    }
 
+  }
+  .service:nth-child(4){
+    img{
+      @media only screen and (min-width: 865px){
+        bottom: -100px;
+      }
+    }
   }
   .service:first-child, .service:last-child{
     width: 506px;
     flex-grow: 0;
     max-width: 506px;
+    @media only screen and (max-width: 1250px){
+      width: 400px;
+    }
   }
   .service:nth-child(3), .service:nth-child(4){
     border-radius: 10px;
@@ -67,6 +77,9 @@
     width: 298px;
     flex-grow: 0;
     background:linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
+    @media only screen and (max-width: 1250px){
+      width: 400px;
+    }
     a{
       color:#fff;
     }
@@ -78,7 +91,6 @@
 
   }
 
-}
 
 
 </style>
