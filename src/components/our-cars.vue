@@ -1,40 +1,21 @@
 <script setup lang="ts">
 import { Carousel, Slide } from 'vue3-carousel'
 import CarComponent from '@/components/car-component.vue'
-import car1 from '../assets/cars-img/sprinter.png';
-const ourCars = [
-    {
-      imgPath: car1,
-      title: 'Mercedes-Benz Sprinter',
-      price: '1300',
-      descr: 'Mercedes benz sprinter 223685 – автобус VIP-класса 2021 года выпуска с комбинированным салоном, панорамным люком в крыше, кресла имеют регулировки положений, окна с тонировкой и шторками',
-      seats:'19'
-    },
-     {
-      imgPath: car1,
-       title: 'Mercedes-Benz Sprinter',
-       price: '1300',
-       descr: 'Mercedes benz sprinter 223685 – автобус VIP-класса 2021 года выпуска с комбинированным салоном, панорамным люком в крыше, кресла имеют регулировки положений, окна с тонировкой и шторками',
-       seats:'18'
-     },
-     {
-       imgPath: car1,
-       title: 'Mercedes-Benz Sprinter',
-       price: '1300',
-       descr: 'Mercedes benz sprinter 223685 – автобус VIP-класса 2021 года выпуска с комбинированным салоном, панорамным люком в крыше, кресла имеют регулировки положений, окна с тонировкой и шторками',
-       seats: '17'
-    }
-  ]
+import {ourCars } from '@/data/cars'
+
+defineProps({ isPhone: Boolean });
 </script>
 
 <template>
 <section class="our-cars">
   <h2>наш автопарк</h2>
+  {{isPhone}}
   <div class="container-car-block">
     <carousel
       :wrap-around="true"
       :items-to-show="1"
       :autoplay="1500"
+      v-if="isPhone"
       class="carousel-container">
       <slide v-for="slide in ourCars" :key="slide">
         <car-component
@@ -46,6 +27,15 @@ const ourCars = [
         ></car-component>
       </slide>
     </carousel>
+    <car-component
+      v-else
+      v-for="item in ourCars" :key="item"
+      :img-path="item.imgPath"
+      :title="item.title"
+      :price="item.price"
+      :descr="item.descr"
+      :seats="item.seats"
+    ></car-component>
   </div>
 </section>
 </template>

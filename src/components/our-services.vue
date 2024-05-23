@@ -33,8 +33,9 @@
 <script setup lang="ts">
 import ServiceComponent from '@/components/service-component.vue'
 import {serviceBlocks} from '@/data/services';
+import CarouselBlock from '../components/carousel-block.vue';
 
 defineProps({ isPhone: Boolean });
 
-import CarouselBlock from '../components/carousel-block.vue';
+
 </script>
