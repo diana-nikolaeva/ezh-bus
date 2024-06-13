@@ -26,7 +26,7 @@ onResize();
   </header>
   <our-services :is-phone="isPhone"></our-services>
   <calculate-block></calculate-block>
-  <our-cars></our-cars>
+  <our-cars :is-phone="isPhone"></our-cars>
   <about-us></about-us>
   <contacts-block></contacts-block>
   <footer>

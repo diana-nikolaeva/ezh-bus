@@ -9,7 +9,6 @@ defineProps({ isPhone: Boolean });
 <template>
 <section class="our-cars">
   <h2>наш автопарк</h2>
-  {{isPhone}}
   <div class="container-car-block">
     <carousel
       :wrap-around="true"
@@ -27,15 +26,17 @@ defineProps({ isPhone: Boolean });
         ></car-component>
       </slide>
     </carousel>
-    <car-component
-      v-else
-      v-for="item in ourCars" :key="item"
-      :img-path="item.imgPath"
-      :title="item.title"
-      :price="item.price"
-      :descr="item.descr"
-      :seats="item.seats"
-    ></car-component>
+    <template v-else>
+      <car-component
+        class="card-of-car"
+        v-for="item in ourCars" :key="item"
+        :img-path="item.imgPath"
+        :title="item.title"
+        :price="item.price"
+        :descr="item.descr"
+        :seats="item.seats"
+      ></car-component>
+    </template>
   </div>
 </section>
 </template>
@@ -46,14 +47,27 @@ defineProps({ isPhone: Boolean });
     padding: 0  20px 19px 20px;
     h2{
       color: #fff;
-      padding-bottom: 19px;
+      padding-bottom: 0;
     }
   }
   .container-car-block{
-    padding: 29px 26px 0 26px;
-    max-width: 403px;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0 auto;
-    background: #fff;
-    border-radius: 10px;
+    .card-of-car{
+      background: #fff;
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding: 29px 26px 0 26px;
+      max-width: 403px;
+      margin-right: 20px;
+      margin-top: 20px;
+      &:last-child{
+       margin-right: 0;
+      }
+    }
   }
 </style>

@@ -29,6 +29,7 @@
 .form-container{
   background: linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
   padding: 44px 27px 31px 27px;
+  margin-bottom: 100px;
   @media only screen and (min-width: 865px){
     flex-grow: 1;
     border-radius: 10px;

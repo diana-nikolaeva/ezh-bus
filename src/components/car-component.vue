@@ -11,12 +11,12 @@ defineProps(
 </script>
 
 <template>
-  <div>
+  <div class="card-of-car">
     <div class="img-car">
       <img :src="imgPath" alt="">
     </div>
     <div class="title-car">{{title}}</div>
-    <div class="price-car">{{price}} ₽/час</div>
+    <div class="price-car">от {{price}} ₽/час</div>
     <div class="descr-car">
       <span>{{descr}}</span>
       <span class="more-details">
@@ -67,6 +67,10 @@ defineProps(
       margin: 0 auto;
       @media screen and (min-width: 826px) {
         font-size: 30px;
+        width: max-content;
+        padding-left: 10px;
+        padding-right: 10px;
+
       }
       span{
         line-height: 5px;
@@ -87,6 +91,12 @@ defineProps(
     .order-block{
       display: flex;
       flex-direction: column;
+      align-items: center;
+      @media screen and (min-width: 865px) {
+        flex-direction: row;
+        margin-bottom: 50px;
+      }
+
       .wrapper-number-seats{
         display: flex;
         flex-direction: row;
@@ -124,6 +134,9 @@ defineProps(
         color: white;
         margin-top: 19px;
         margin-bottom: 40px;
+        @media screen and (min-width: 865px){
+          margin: 0;
+        }
       }
     }
 </style>
