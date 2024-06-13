@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { Carousel, Slide } from 'vue3-carousel'
-import CarComponent from '@/components/car-component.vue'
-import {ourCars } from '@/data/cars'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide } from 'vue3-carousel';
+import CarComponent from '@/components/car-component.vue';
+import {ourCars } from '@/data/cars';
 
 defineProps({ isPhone: Boolean });
 </script>
@@ -51,12 +52,14 @@ defineProps({ isPhone: Boolean });
     }
   }
   .container-car-block{
-    max-width: 1250px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
+    @media only screen and (min-width: 845px){
+      max-width: 1250px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+    }
     .card-of-car{
       background: #fff;
       border-radius: 10px;
