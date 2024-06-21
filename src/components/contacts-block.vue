@@ -65,6 +65,7 @@
        width: 616px;
        height: 517px;
        margin-left: 200px;
+       border-radius: 10px;
      }
    }
    iframe{
