@@ -58,6 +58,7 @@ export default defineComponent({
       }
     }
   }
+
   .title-descr{
     margin: 0 20px;
     color:  #232323;
