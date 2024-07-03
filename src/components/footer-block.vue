@@ -55,6 +55,10 @@
     }
   }
   .rect-footer-right{
+    display:none;
+    @media only screen and (min-width: 865px){
+      display: block;
+    }
     background: url("../assets/rect-white.png");
     background-size: cover;
     width: 200px;
