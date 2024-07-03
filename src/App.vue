@@ -22,7 +22,7 @@ onResize();
 
 <template>
   <header>
-    <header-block></header-block>
+    <header-block :is-phone="isPhone"></header-block>
   </header>
   <our-services :is-phone="isPhone"></our-services>
   <calculate-block></calculate-block>

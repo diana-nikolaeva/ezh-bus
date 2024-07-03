@@ -30,6 +30,9 @@ nav{
   flex-direction: column;
   background: #DE4C2F;
   padding: 33px;
+  @media screen and (min-width: 865px) {
+    background: none;
+  }
   .header-phone-menu-open{
     margin-bottom: 34px;
     position: relative;

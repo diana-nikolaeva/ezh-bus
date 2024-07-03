@@ -1,4 +1,5 @@
 <template>
+  <template v-if="isPhone">
     <phone-menu-opened
       v-if="menuIsOpened"
       @closeMenu="menuPhoneClose"
@@ -7,11 +8,60 @@
       v-if ="!menuIsOpened"
       @openMenu="onOpenMenu"
     ></phone-menu-close>
+  </template>
+  <div v-else class="desktop-main-banner">
+    <phone-menu-close></phone-menu-close>
+    <h1>развозка сотрудников</h1>
+    <h4>в Санкт-Петербурге и Ленинградской области</h4>
+    <button class="btn btn-main-banner">Рассчитать стоимость</button>
+  </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-
+<style scoped>
+.desktop-main-banner{
+  background: url("../assets/cars-main-banner.png") 40% 70% no-repeat,
+                    url("../assets/bg-main-banner.png") no-repeat;
+  height: 1032px;
+  width: 100%;
+  position: relative;
+}
+h1{
+  color: #FFF;
+  text-align: center;
+  font-family: "Soyuz Grotesk", sans-serif;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 60px;
+  margin-bottom: 11px;
+}
+h4{
+  color: #FFF;
+  text-align: center;
+  font-family: SVN-Gilroy, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+.btn-main-banner{
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 427px;
+  max-width: 427px;
+  height: 100px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: radial-gradient(99.74% 133.62% at 1.94% 0%, #FFF 0%, #E7E7E7 49.5%, #D2D2D2 100%);
+  box-shadow: 0px 6px 0px 0px #9B9B9B, 0px 30px 40px 0px #590F00;
+  font-family: "Soyuz Grotesk", sans-serif;
+  font-size: 26px;
 }
 </style>
 <script setup>
@@ -27,4 +77,5 @@ function menuPhoneClose(){
 
 import PhoneMenuClose from '@/components/phone-menu-close.vue'
 import PhoneMenuOpened from '@/components/phone-menu-opened.vue'
+defineProps({ isPhone: Boolean });
 </script>

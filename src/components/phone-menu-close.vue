@@ -20,6 +20,9 @@
 <style scoped>
 .phone-menu-close{
   padding: 12px;
+  @media screen and (min-width: 865px){
+    padding-top: 30px;
+  }
   .main-menu{
     padding: 12px;
     background: #fff;
@@ -33,7 +36,7 @@
     width: 1250px;
     box-sizing: border-box;
     @media only screen and (min-width: 865px){
-      height: 93px;
+      height: 117px;
       margin: 0 auto;
     }
     @media only screen and (max-width: 1250px){
@@ -41,6 +44,10 @@
     }
     .logo{
       width: 54px;
+      @media only screen and (min-width: 865px){
+        width: 146px;
+        height: 84px;
+      }
       img{
         width: 100%;
       }
