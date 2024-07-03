@@ -13,17 +13,27 @@
     <phone-menu-close></phone-menu-close>
     <h1>развозка сотрудников</h1>
     <h4>в Санкт-Петербурге и Ленинградской области</h4>
+    <figure>
+      <img src="../assets/cars-main-banner.png" alt="">
+    </figure>
     <button class="btn btn-main-banner">Рассчитать стоимость</button>
   </div>
 </template>
 
 <style scoped>
 .desktop-main-banner{
-  background: url("../assets/cars-main-banner.png") 40% 70% no-repeat,
-                    url("../assets/bg-main-banner.png") no-repeat;
+  background: url("../assets/bg-main-banner.png") center no-repeat;
   height: 1032px;
-  width: 100%;
   position: relative;
+
+}
+figure{
+  max-width: 1252px;
+  width: 80%;
+  margin: 0 auto;
+  img{
+    width: 100%;
+  }
 }
 h1{
   color: #FFF;
@@ -44,7 +54,7 @@ h4{
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 0;
+  margin-bottom: 20px;
 }
 .btn-main-banner{
   position: absolute;
