@@ -28,7 +28,6 @@ function onClick() {
 nav{
   display: flex;
   flex-direction: column;
-  background: #DE4C2F;
   padding: 33px;
   @media screen and (min-width: 865px) {
     background: none;

@@ -29,14 +29,20 @@
 </template>
 <style scoped>
 .desktop-main-banner{
-  height: 1032px;
+  height: 577px;
   position: relative;
+  @media screen and (min-width: 865px) {
+    height: 1032px;
+  }
 }
 .main-red-bcgr{
   width: 100%;
-  height: 1032px;
+  height: 577px;
   position: absolute;
   top:0;
+  @media screen and (min-width: 865px) {
+    height: 1032px;
+  }
   .first-layer{
     background: #DE4C2F;
     width: 100%;
@@ -45,16 +51,20 @@
     z-index: 1;
   }
   .second-layer{
-    width: 386px;
+    width: 50%;
     position: absolute;
     z-index: 2;
     background:#721111;
     height: 100%;
     left: 50%;
     transform: translate(-50%);
+    @media screen and (min-width: 865px) {
+      width: 386px;
+    }
   }
   .third-layer{
-    width: 880px;
+    max-width: 880px;
+    width: 100%;
     height: 320px;
     background: #721111;
     clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0 100%);
@@ -77,15 +87,17 @@
 }
 figure{
   max-width: 1252px;
-  width: 70%;
   position: absolute;
   left: 46%;
   transform: translate(-50%);
   top:500px;
   z-index: 4;
   margin: 0;
+  overflow: hidden;
   @media screen and (min-width: 1080px){
     top: 500px;
+    width: 70%;
+    min-width: 705px;
   }
   @media screen and (min-width: 1350px){
     top: 420px;
@@ -94,6 +106,7 @@ figure{
     width: 100%;
     z-index: 4;
     position: relative;
+    object-fit: cover;
 
   }
 }
@@ -101,23 +114,25 @@ h1{
   color: #FFF;
   text-align: center;
   font-family: "Soyuz Grotesk", sans-serif;
-  font-size: 100px;
+  font-size: 49px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 30px;
-  margin-bottom: 11px;
+  margin: 30px auto;
+  margin-bottom: 0;
   z-index: 5;
   position: relative;
   @media screen and (min-width: 1080px){
     margin-top: 60px;
+    font-size: 100px;
+    margin-bottom: 11px;
   }
 }
 h4{
   color: #FFF;
   text-align: center;
   font-family: SVN-Gilroy, sans-serif;
-  font-size: 30px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -125,13 +140,15 @@ h4{
   z-index: 5;
   position: relative;
   margin-top: 10px;
+  @media screen and (min-width: 865px){
+    font-size: 30px;
+  }
 }
 .btn-main-banner{
   position: absolute;
   bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
-  width: 427px;
   max-width: 427px;
   height: 100px;
   padding: 10px;
@@ -143,6 +160,9 @@ h4{
   font-family: "Soyuz Grotesk", sans-serif;
   font-size: 26px;
   z-index: 5;
+  @media only screen and (min-width: 865px){
+    width: 427px;
+  }
 }
 </style>
 <script setup>
