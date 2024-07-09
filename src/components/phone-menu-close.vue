@@ -20,6 +20,8 @@
 <style scoped>
 .phone-menu-close{
   padding: 12px;
+  z-index: 10;
+  position: relative;
   @media screen and (min-width: 865px){
     padding-top: 30px;
   }

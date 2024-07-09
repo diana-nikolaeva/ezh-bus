@@ -11,7 +11,7 @@ import { onMounted, onBeforeUnmount, ref } from 'vue';
 const isPhone = ref();
 const onResize = () => {
 
-  isPhone.value = window.innerWidth <= 845;
+  isPhone.value = window.innerWidth <= 865;
 }
 
 onMounted(() => window.addEventListener('resize', onResize));

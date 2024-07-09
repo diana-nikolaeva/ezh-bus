@@ -1,38 +1,100 @@
 <template>
-  <template v-if="isPhone">
-    <phone-menu-opened
-      v-if="menuIsOpened"
-      @closeMenu="menuPhoneClose"
-    ></phone-menu-opened>
-    <phone-menu-close
-      v-if ="!menuIsOpened"
-      @openMenu="onOpenMenu"
-    ></phone-menu-close>
-  </template>
-  <div v-else class="desktop-main-banner">
-    <phone-menu-close></phone-menu-close>
+  <div class="desktop-main-banner">
+    <template v-if="isPhone">
+      <phone-menu-opened
+        v-if="menuIsOpened"
+        @closeMenu="menuPhoneClose"
+      ></phone-menu-opened>
+      <phone-menu-close
+        v-if ="!menuIsOpened"
+        @openMenu="onOpenMenu"
+      ></phone-menu-close>
+    </template>
+    <template v-else>
+      <phone-menu-close></phone-menu-close>
+    </template>
     <h1>развозка сотрудников</h1>
     <h4>в Санкт-Петербурге и Ленинградской области</h4>
-    <figure>
-      <img src="../assets/cars-main-banner.png" alt="">
-    </figure>
+    <div class="main-red-bcgr">
+      <div class="first-layer"></div>
+      <div class="second-layer"></div>
+      <div class="third-layer"></div>
+      <div class="fourth-layer"></div>
+      <figure>
+        <img src="../assets/cars-main-banner.png" alt="">
+      </figure>
+    </div>
     <button class="btn btn-main-banner">Рассчитать стоимость</button>
   </div>
 </template>
-
 <style scoped>
 .desktop-main-banner{
-  background: url("../assets/bg-main-banner.png") center no-repeat;
   height: 1032px;
   position: relative;
-
+}
+.main-red-bcgr{
+  width: 100%;
+  height: 1032px;
+  position: absolute;
+  top:0;
+  .first-layer{
+    background: #DE4C2F;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+  .second-layer{
+    width: 386px;
+    position: absolute;
+    z-index: 2;
+    background:#721111;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .third-layer{
+    width: 880px;
+    height: 320px;
+    background: #721111;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0 100%);
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  .fourth-layer{
+    background-image: radial-gradient(circle, #e16759, #DE4C2F);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top:0;
+    transform: translate(-50%);
+  }
 }
 figure{
   max-width: 1252px;
-  width: 80%;
-  margin: 0 auto;
+  width: 70%;
+  position: absolute;
+  left: 46%;
+  transform: translate(-50%);
+  top:500px;
+  z-index: 4;
+  margin: 0;
+  @media screen and (min-width: 1080px){
+    top: 500px;
+  }
+  @media screen and (min-width: 1350px){
+    top: 420px;
+  }
   img{
     width: 100%;
+    z-index: 4;
+    position: relative;
+
   }
 }
 h1{
@@ -43,8 +105,13 @@ h1{
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 11px;
+  z-index: 5;
+  position: relative;
+  @media screen and (min-width: 1080px){
+    margin-top: 60px;
+  }
 }
 h4{
   color: #FFF;
@@ -55,6 +122,9 @@ h4{
   font-weight: 400;
   line-height: normal;
   margin-bottom: 20px;
+  z-index: 5;
+  position: relative;
+  margin-top: 10px;
 }
 .btn-main-banner{
   position: absolute;
@@ -72,6 +142,7 @@ h4{
   box-shadow: 0px 6px 0px 0px #9B9B9B, 0px 30px 40px 0px #590F00;
   font-family: "Soyuz Grotesk", sans-serif;
   font-size: 26px;
+  z-index: 5;
 }
 </style>
 <script setup>
