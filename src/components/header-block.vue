@@ -32,7 +32,7 @@
   height: 577px;
   position: relative;
   @media screen and (min-width: 865px) {
-    height: 1032px;
+    height: 1050px;
   }
 }
 .main-red-bcgr{
@@ -41,19 +41,19 @@
   position: absolute;
   top:0;
   @media screen and (min-width: 865px) {
-    height: 1032px;
+    height: 1050px;
   }
   .first-layer{
     background: #DE4C2F;
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
   }
   .second-layer{
     width: 50%;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     background:#721111;
     height: 100%;
     left: 50%;
@@ -65,14 +65,18 @@
   .third-layer{
     max-width: 880px;
     width: 100%;
-    height: 320px;
+    height: 190px;
     background: #721111;
     clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0 100%);
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
+    @media screen and (min-width: 865px) {
+      width: 880px;
+      height: 320px;
+    }
   }
   .fourth-layer{
     background-image: radial-gradient(circle, #e16759, #DE4C2F);
@@ -90,21 +94,30 @@ figure{
   position: absolute;
   left: 46%;
   transform: translate(-50%);
-  top:500px;
-  z-index: 4;
+  top:335px;
+  z-index: 5;
   margin: 0;
   overflow: hidden;
-  @media screen and (min-width: 1080px){
-    top: 500px;
-    width: 70%;
-    min-width: 705px;
+  width: 80%;
+  @media screen and (min-width: 360px){
+    top:306px;
   }
+  @media screen and (min-width: 500px){
+    top:280px;
+  }
+  @media screen and (min-width: 600px){
+    top:240px;
+  }
+  @media screen and (min-width: 865px){
+    top:500px;
+  }
+
   @media screen and (min-width: 1350px){
     top: 420px;
   }
   img{
     width: 100%;
-    z-index: 4;
+    z-index: 5;
     position: relative;
     object-fit: cover;
 
@@ -122,7 +135,7 @@ h1{
   margin-bottom: 0;
   z-index: 5;
   position: relative;
-  @media screen and (min-width: 1080px){
+  @media screen and (min-width: 865px){
     margin-top: 60px;
     font-size: 100px;
     margin-bottom: 11px;
@@ -150,7 +163,7 @@ h4{
   left: 50%;
   transform: translateX(-50%);
   max-width: 427px;
-  height: 100px;
+  height: 50px;
   padding: 10px;
   justify-content: center;
   align-items: center;
@@ -158,10 +171,14 @@ h4{
   background: radial-gradient(99.74% 133.62% at 1.94% 0%, #FFF 0%, #E7E7E7 49.5%, #D2D2D2 100%);
   box-shadow: 0px 6px 0px 0px #9B9B9B, 0px 30px 40px 0px #590F00;
   font-family: "Soyuz Grotesk", sans-serif;
-  font-size: 26px;
-  z-index: 5;
+  font-size: 17px;
+  z-index: 6;
+  box-sizing: border-box;
+  width:calc(100% - 40px);
   @media only screen and (min-width: 865px){
     width: 427px;
+    height: 100px;
+    font-size: 26px;
   }
 }
 </style>
