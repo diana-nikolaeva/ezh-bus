@@ -133,12 +133,12 @@ h1{
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 70px;
+  margin-top: 20px;
   margin-bottom: 0;
   z-index: 5;
   position: relative;
   @media screen and (min-width: 865px){
-    margin-top: 177px;
+    margin-top: 57px;
     font-size: 100px;
     margin-bottom: 11px;
   }

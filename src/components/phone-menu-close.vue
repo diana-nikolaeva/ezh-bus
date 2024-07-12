@@ -38,9 +38,6 @@
     align-items: center;
     width: 1250px;
     box-sizing: border-box;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
     @media only screen and (min-width: 865px){
       height: 117px;
       margin: 0 auto;
