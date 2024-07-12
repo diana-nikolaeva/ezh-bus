@@ -29,6 +29,9 @@ nav{
   display: flex;
   flex-direction: column;
   padding: 33px;
+  background: #DE4C2F;
+  position: relative;
+  z-index: 10;
   @media screen and (min-width: 865px) {
     background: none;
   }

@@ -9,6 +9,7 @@ defineProps({ isPhone: Boolean });
 
 <template>
 <section class="our-cars">
+  <a  name="Автопарк" href=""></a>
   <h2>наш автопарк</h2>
   <div class="container-car-block">
     <carousel

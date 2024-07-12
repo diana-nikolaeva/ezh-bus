@@ -7,6 +7,7 @@ export default defineComponent({
 })
 </script>
 <template>
+  <a  name="Калькулятор" href=""></a>
   <div class="title-descr">Сообщите нашей компании маршрут и время подачи транспорта для перевозки</div>
   <div class="calculate-block-container">
     <div class="title-block">

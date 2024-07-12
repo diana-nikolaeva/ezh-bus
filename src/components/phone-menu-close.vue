@@ -22,6 +22,7 @@
   padding: 12px;
   z-index: 10;
   position: relative;
+  background: none;
   @media screen and (min-width: 865px){
     padding-top: 30px;
   }

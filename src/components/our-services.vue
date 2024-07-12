@@ -1,5 +1,6 @@
 <template>
   <section class="our-services">
+    <a  name="Услуги" href=""></a>
     <h2>услуги.</h2>
     <!--  <div class="container">контейнер для блока услуг на десктопе</div>-->
     <CarouselBlock v-if="isPhone"></CarouselBlock>

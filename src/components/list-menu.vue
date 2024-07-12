@@ -1,18 +1,36 @@
 <script setup lang="ts">
 const menuItems = [
-  {titleMenuItem: 'Главная'},
-  {titleMenuItem: 'Услуги'},
-  {titleMenuItem: 'Калькулятор'},
-  {titleMenuItem: 'Автопарк'},
-  {titleMenuItem: 'О нас'},
-  {titleMenuItem: 'Контакты'},
+  {
+    titleMenuItem: 'Главная',
+    linkMenuItem:'#Главная'
+  },
+  {
+    titleMenuItem: 'Услуги',
+    linkMenuItem:'#Услуги'
+  },
+  {
+    titleMenuItem: 'Калькулятор',
+    linkMenuItem:'#Калькулятор'
+  },
+  {
+    titleMenuItem: 'Автопарк',
+    linkMenuItem:'#Автопарк'
+  },
+  {
+    titleMenuItem: 'О нас',
+    linkMenuItem:'#О нас'
+  },
+  {
+    titleMenuItem: 'Контакты',
+    linkMenuItem:'#Контакты'
+  },
 ]
 </script>
 
 <template>
   <ul class="main-menu-phone">
     <li class="menu-item selected" :key="item.titleMenuItem" v-for="item in menuItems" >
-      <a href="/{{item.titleMenuItem}}">{{item.titleMenuItem}}</a>
+      <a :href="item.linkMenuItem">{{item.titleMenuItem}}</a>
     </li>
   </ul>
 </template>

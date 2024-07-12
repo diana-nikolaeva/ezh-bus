@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <a  name="О нас" href=""></a>
   <h2 class="about-us-title">о нас.</h2>
   <section class="about-us-block">
     <div class="banner">

@@ -4,6 +4,7 @@
 
 <template>
   <section class="contact-block">
+    <a  name="Контакты" href=""></a>
     <h2>контакты.</h2>
     <div class="container-contact-block">
       <div class="maps">
