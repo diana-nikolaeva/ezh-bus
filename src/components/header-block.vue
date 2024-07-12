@@ -24,7 +24,9 @@
         <img src="../assets/cars-main-banner.png" alt="">
       </figure>
     </div>
-    <button class="btn btn-main-banner">Рассчитать стоимость</button>
+    <button class="btn btn-main-banner">
+      <a href="#Калькулятор">Рассчитать стоимость</a>
+    </button>
   </div>
 </template>
 <style scoped>
@@ -131,12 +133,12 @@ h1{
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin: 30px auto;
+  margin-top: 70px;
   margin-bottom: 0;
   z-index: 5;
   position: relative;
   @media screen and (min-width: 865px){
-    margin-top: 60px;
+    margin-top: 177px;
     font-size: 100px;
     margin-bottom: 11px;
   }
@@ -179,6 +181,10 @@ h4{
     width: 427px;
     height: 100px;
     font-size: 26px;
+  }
+  a{
+    color: black;
+    text-decoration: none;
   }
 }
 </style>

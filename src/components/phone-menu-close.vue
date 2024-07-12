@@ -38,12 +38,15 @@
     align-items: center;
     width: 1250px;
     box-sizing: border-box;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
     @media only screen and (min-width: 865px){
       height: 117px;
       margin: 0 auto;
     }
     @media only screen and (max-width: 1250px){
-      width: 100%;
+      width: calc(100% - 40px);
     }
     .logo{
       width: 54px;
