@@ -7,6 +7,7 @@ import AboutUs from '@/components/about-us.vue'
 import ContactsBlock from '@/components/contacts-block.vue'
 import RequestBlock from '@/components/footer-block.vue'
 import { onMounted, onBeforeUnmount, ref } from 'vue';
+import GoBackBtn from '@/components/go-back-btn.vue'
 
 const isPhone = ref();
 const onResize = () => {
@@ -29,6 +30,7 @@ onResize();
   <our-cars :is-phone="isPhone"></our-cars>
   <about-us></about-us>
   <contacts-block></contacts-block>
+  <go-back-btn></go-back-btn>
   <footer>
     <request-block></request-block>
   </footer>

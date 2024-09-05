@@ -10,6 +10,7 @@
                          :img-path= "item.imgBcgr"
                          :link="item.link"
                          :title="item.title"
+                         :description="item.description"
       ></service-component>
     </div>
   </section>

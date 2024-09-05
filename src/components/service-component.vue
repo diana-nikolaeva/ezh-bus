@@ -1,26 +1,76 @@
 <template>
-    <div class="service black">
-      <img :src="imgPath" alt="">
-      <h3>{{title}}</h3>
-      <a :href="link">Подробнее</a>
+  <div class="card-rotate">
+    <div class="inner-card">
+      <div class="service black front">
+        <img :src="imgPath" alt="">
+        <h3>{{title}}</h3>
+        <a :href="link">Подробнее</a>
+      </div>
+      <div class="service back">
+        <h4>{{title}}</h4>
+        <p>{{description}}</p>
+      </div>
     </div>
-
+  </div>
 </template>
 
 <style scoped>
-  .service{
-    height: 296px;
-    position: relative;
-    background:  #1B1C1E;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    flex-grow: 1;
-    max-width: 400px;
-    overflow: hidden;
+.card-rotate {
+  height: 296px;
+  max-width: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+  background:  #1B1C1E;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  @media only screen and (max-width: 1250px){
+    width: 400px;
+  }
+  .card-rotate:nth-child(3), .card-rotate:nth-child(4){
+    width: 506px;
+    flex-grow: 0;
+    max-width: 506px;
     @media only screen and (max-width: 1250px){
       width: 400px;
     }
+  }
+}
+.inner-card{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.front, .back{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.back{
+  transform: rotateY(180deg);
+  background-color: #d8d8d8;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: justify;
+  h4{
+    font-size: 18px;
+    margin: 0 auto;
+  }
+}
+.card-rotate:hover .inner-card {
+  transform: rotateY(180deg);
+}
 
+  .service{
     h3{
       color:  #FFF;
       font-family: "Soyuz Grotesk",sans-serif;
@@ -30,7 +80,7 @@
       line-height: normal;
       width: 61%;
       margin-left: 40px;
-      margin-top: 89px;
+      margin-top: 50px;
       z-index: 100;
     }
     a{
@@ -49,29 +99,21 @@
       bottom: 0;
     }
   }
-  .service:last-child, .service:nth-child(3){
+  .card-rotate:last-child, .card-rotate:nth-child(3){
     margin-right: 0;
     @media only screen and (max-width: 1250px){
       margin-right: 20px;
     }
 
   }
-  .service:nth-child(4){
+  .card-rotate:nth-child(4){
     img{
       @media only screen and (min-width: 865px){
         bottom: -100px;
       }
     }
   }
-  .service:first-child, .service:last-child{
-    width: 506px;
-    flex-grow: 0;
-    max-width: 506px;
-    @media only screen and (max-width: 1250px){
-      width: 400px;
-    }
-  }
-  .service:nth-child(3), .service:nth-child(4){
+  .card-rotate:nth-child(3), .card-rotate:nth-child(4){
     border-radius: 10px;
     border: 1px solid #535353;
     width: 298px;
@@ -99,7 +141,8 @@ defineProps(
   {
     imgPath: String,
     link: String,
-    title:String
+    title:String,
+    description:String
   }
 );
 

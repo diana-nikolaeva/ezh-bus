@@ -26,6 +26,7 @@ function isRed (myIndex: number): boolean {
           :img-path="slide.imgBcgr"
           :link="slide.link"
           :title="slide.title"
+          :description="slide.description"
         ></service-component>
     </slide>
   </carousel>
