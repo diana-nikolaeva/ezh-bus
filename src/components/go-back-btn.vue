@@ -1,10 +1,10 @@
 <script setup>
-const btnUp = document.querySelector('go-back-btn')
-window.addEventListener('scroll',function(){
-  if (window.scrollY >  document.documentElement.clientHeight){
-    btnUp.classList.add('visible')
-  }
-})
+const btnUp = document.querySelector('go-back-btn');
+// window.addEventListener('scroll',function(){
+//   if (window.scrollY >  document.documentElement.clientHeight){
+//     btnUp.classList.add('visible')
+//   }
+// })
 </script>
 <template>
   <div class="go-back-btn">

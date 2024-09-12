@@ -1,5 +1,40 @@
 <script setup lang="ts">
+import { reactive, ref } from 'vue'
+import { useVuelidate } from '@vuelidate/core';
+import { required, numeric } from '@vuelidate/validators';
 
+const formState = reactive({
+  name: '',
+  phone: ''
+});
+
+const rules = {
+  name: {
+    required: required
+  },
+  phone: { required, numeric }, // Matches state.lastName
+}
+
+const v$ = useVuelidate(rules, formState);
+ let isSubmitted = ref(false);
+
+ const onSubmit = (e: Event) => {
+   isSubmitted.value = true;
+   e.preventDefault();
+   if(v$.value.$invalid){
+     return;
+   }
+   fetch("submit", {
+     "method": "POST",
+     "headers": {
+       "content-type": "application/json"
+     },
+     "body": JSON.stringify(formState)
+   })
+     .then(() => {
+        alert('Спасибо, заявка принята! Мы Вам перезвоним!')
+     });
+ }
 </script>
 
 <template>
@@ -13,10 +48,18 @@
         <span>Мы скоро свяжемся с вами и всё расскажем!</span>
       </div>
       <h2>оставьте заявку</h2>
-      <div class="descr">Заказывая автотранспортные услуги в нашей компании, вы получаете комфортную и надежную перевозку по оптимальной цене </div>
-      <form action="">
-        <input type="text" placeholder="Как Вас зовут?">
-        <input placeholder="Ваш телефон или почта">
+      <div class="descr">
+        Заказывая автотранспортные услуги в нашей компании, вы получаете комфортную и надежную перевозку по оптимальной цене
+      </div>
+      <form @submit="onSubmit" action="">
+        <div class="form-field">
+          <input v-model="formState.name" type="text" placeholder="Как Вас зовут?">
+          <div class="input-errors" v-if="isSubmitted && v$.name.$invalid">Введите имя!</div>
+        </div>
+        <div class="form-field">
+          <input v-model="formState.phone" placeholder="Ваш телефон или почта">
+          <div class="input-errors" v-if="isSubmitted && v$.phone.$invalid">Введите номер телефона!</div>
+        </div>
         <button type="submit" class="request-btn btn">оставить заявку</button>
       </form>
       <div class="person-data">Нажимая на кнопку "Отправить”, я соглашаюсь условиями обработки персональных данных</div>
@@ -115,10 +158,14 @@
       }
     }
     input{
+      margin-bottom: 0;
       @media only screen and (min-width: 865px){
         width: 296px;
         margin-right: 22px;
       }
+    }
+    .form-field{
+      margin-bottom: 20px;
     }
 
     .request-btn {
