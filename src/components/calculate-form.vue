@@ -1,12 +1,65 @@
 <script setup lang="ts">
+import { computed, reactive, ref } from 'vue'
+import { useVuelidate } from '@vuelidate/core';
+import { required, numeric } from '@vuelidate/validators';
+
+const formState = reactive({
+  name: '',
+  phone: '',
+  time:'',
+  comments:'',
+  service:''
+});
+const rules = {
+  name: { required },
+  phone: { required, numeric }
+}
+const v$ = useVuelidate(rules, formState);
+let isSubmitted = ref(false);
+
+const hasNameErrors = computed(() => {
+  return isSubmitted.value && v$.value.name.$invalid;
+});
+
+const hasPhoneErrors = computed(() => {
+  return isSubmitted.value && v$.value.phone.$invalid;
+});
+
+const placeholders = {
+  name: computed(() => hasNameErrors.value? 'вы не правы' :  'как вас зовут?'),
+  phone: computed(() => hasPhoneErrors.value? 'вы не правы' :  'Ваш телефон или почта'),
+}
+const onSubmit = (e:Event) => {
+  isSubmitted.value = true;
+  e.preventDefault()
+  if (v$.value.$invalid) {
+    return;
+  }
+  fetch("submit", {
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": JSON.stringify(formState)
+  })
+    .then(() => {
+      alert('Спасибо, заявка принята! Мы Вам перезвоним!')
+    });
+}
+
+
 </script>
 <template>
   <div class="form-container">
-    <form action="" class="calculate-form">
+    <form @submit ="onSubmit" action="" class="calculate-form">
       <div class="input-wrapper">
-        <input  type="text" placeholder="Как Вас зовут?">
-        <input placeholder="Ваш телефон или почта">
-        <select name="services" id="">
+        <div class="form-field" :class="{ 'has-error': hasNameErrors }">
+          <input v-model="formState.name" type="text" :placeholder="placeholders.name.value">
+        </div>
+        <div class="form-field">
+          <input v-model="formState.phone" :placeholder="placeholders.phone.value">
+        </div>
+        <select v-model="formState.service" name="services" id="">
           <option>Развозка сотрудников</option>
           <option>Детские перевозки</option>
           <option>Аренда авто</option>
@@ -14,15 +67,14 @@
           <option>Трансферные перевозки</option>
           <option>Туристическая развозка</option>
         </select>
-        <input type="text" placeholder="Удобное время для звонка">
-        <textarea placeholder="Оставьте свой комментарий"></textarea>
+        <input v-model="formState.time" type="text" placeholder="Удобное время для звонка">
+        <textarea v-model="formState.comments" placeholder="Оставьте свой комментарий"></textarea>
       </div>
       <div class="btn-wrapper">
         <button class="calc-btn btn" type="submit">рассчитать</button>
         <div class="form-descr">Мы скоро свяжемся с вами и всё расскажем!</div>
       </div>
     </form>
-
   </div>
 </template>
 <style scoped>
@@ -72,6 +124,20 @@
       margin-right: 20px;
       width: 46%;
     }
+  }
+  .form-field {
+    margin-bottom: 20px;
+    @media only screen and (min-width: 865px) {
+      margin-right: 20px;
+      width: 46%;
+      input {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .has-error input::placeholder {
+    color:red
   }
   .calc-btn{
     margin-bottom: 40px;
