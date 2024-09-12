@@ -56,11 +56,12 @@
 }
 .back{
   transform: rotateY(180deg);
-  background-color: #d8d8d8;
+  background-color: #1B1C1E;
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
   text-align: justify;
+  color:white;
   h4{
     font-size: 18px;
     margin: 0 auto;
@@ -115,12 +116,14 @@
   }
   .card-rotate:nth-child(3), .card-rotate:nth-child(4){
     border-radius: 10px;
-    border: 1px solid #535353;
     width: 298px;
     flex-grow: 0;
     background:linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
     @media only screen and (max-width: 1250px){
       width: 400px;
+    }
+    .back{
+      background:linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
     }
     a{
       color:#fff;
