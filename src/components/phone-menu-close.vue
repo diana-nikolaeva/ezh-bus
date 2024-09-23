@@ -5,7 +5,7 @@
         <img src="../assets/logo.png" alt="logo-ezh-bus">
       </div>
       <list-menu class="list-menu-desktop"></list-menu>
-      <div class="phone-number">+7 (812) 500-65-65 </div>
+      <a href="tel:+79052163007" class="phone-number">+7 (905) 216-30-07 </a>
       <button class="btn-open-phone-menu" @click="onClick">
         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 0 21 18" fill="none">
           <rect width="21" height="2.47059" fill="#DE4C2F"/>
@@ -43,7 +43,7 @@
       margin: 0 auto;
     }
     @media only screen and (max-width: 1250px){
-      width: calc(100% - 40px);
+      width: 100%;
     }
     .logo{
       width: 54px;
@@ -62,7 +62,8 @@
       font-size: 17px;
       font-style: normal;
       font-weight: 700;
-      line-height: 160%; /* 27.2px */
+      line-height: 160%;
+      text-decoration: none;
     }
   .btn-open-phone-menu{
     border: 0;

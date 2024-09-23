@@ -60,7 +60,6 @@
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
-  text-align: justify;
   color:white;
   h4{
     font-size: 18px;

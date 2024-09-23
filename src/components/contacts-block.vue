@@ -14,7 +14,7 @@
         <div class="order-call">
           <img src="../assets/phone-icon.png" alt="phone-ezh-bus" class="img-phone">
           <div class="container-contacts">
-            <div class="phone">+7 (812) 500-65-65</div>
+            <a href="tel:+79052163007" class="phone">+7 (905) 216-30-07 </a>
             <div class="call-back">
               <a href="/">Закакзать обратный звонок</a>
             </div>

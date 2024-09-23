@@ -48,7 +48,7 @@ function isRed (myIndex: number): boolean {
   &.red{
     background:linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
     a{
-      color: white;
+      color: white!important;
     }
   }
 
