@@ -17,7 +17,7 @@ function isRed (myIndex: number): boolean {
   <carousel
     :wrap-around="true"
     :items-to-show="1"
-    :autoplay="1500"
+    :autoplay="2500"
     class="carousel-container">
     <slide v-for="(slide,index) in serviceBlocks" :key="slide">
         <service-component
@@ -42,9 +42,9 @@ function isRed (myIndex: number): boolean {
   height: 100%;
   position: relative;
   text-align: left;
-  padding-left: 38px;
   border: 1px solid #535353;
   border-radius: 10px;
+  margin-left: 20px;
   &.red{
     background:linear-gradient(114deg, #CB422B 1.43%, #771515 101.61%);
     a{

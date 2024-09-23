@@ -24,7 +24,7 @@ const v$ = useVuelidate(rules, formState);
    if(v$.value.$invalid){
      return;
    }
-   fetch("submit", {
+   fetch("https://functions.yandexcloud.net/d4eg4fnqcnfqur1lkfc8", {
      "method": "POST",
      "headers": {
        "content-type": "application/json"

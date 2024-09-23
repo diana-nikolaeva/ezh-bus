@@ -188,7 +188,7 @@ h4{
   }
 }
 </style>
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 let menuIsOpened = ref(false);
 

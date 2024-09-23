@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
 import { useVuelidate } from '@vuelidate/core';
-import { required, numeric } from '@vuelidate/validators';
+import { required, numeric, email } from '@vuelidate/validators'
 
 const formState = reactive({
   name: '',
@@ -11,8 +11,8 @@ const formState = reactive({
   service:''
 });
 const rules = {
-  name: { required },
-  phone: { required, numeric }
+  name: { required},
+  phone: { required },
 }
 const v$ = useVuelidate(rules, formState);
 let isSubmitted = ref(false);
@@ -26,16 +26,18 @@ const hasPhoneErrors = computed(() => {
 });
 
 const placeholders = {
-  name: computed(() => hasNameErrors.value? 'вы не правы' :  'как вас зовут?'),
-  phone: computed(() => hasPhoneErrors.value? 'вы не правы' :  'Ваш телефон или почта'),
+  name: computed(() => hasNameErrors.value? 'Введите имя' :  'как вас зовут?'),
+  phone: computed(() => hasPhoneErrors.value? 'Введите телефон или почту' :  'Ваш телефон или почта'),
 }
 const onSubmit = (e:Event) => {
   isSubmitted.value = true;
   e.preventDefault()
   if (v$.value.$invalid) {
+
+
     return;
   }
-  fetch("submit", {
+  fetch("https://functions.yandexcloud.net/d4eg4fnqcnfqur1lkfc8", {
     "method": "POST",
     "headers": {
       "content-type": "application/json"
@@ -56,7 +58,7 @@ const onSubmit = (e:Event) => {
         <div class="form-field" :class="{ 'has-error': hasNameErrors }">
           <input v-model="formState.name" type="text" :placeholder="placeholders.name.value">
         </div>
-        <div class="form-field">
+        <div class="form-field" :class="{ 'has-error': hasNameErrors}">
           <input v-model="formState.phone" :placeholder="placeholders.phone.value">
         </div>
         <select v-model="formState.service" name="services" id="">

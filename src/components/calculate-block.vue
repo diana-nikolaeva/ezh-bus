@@ -1,10 +1,5 @@
-<script>
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import CalculateForm from '@/components/calculate-form.vue'
-
-export default defineComponent({
-  components: { CalculateForm }
-})
 </script>
 <template>
   <a  name="Калькулятор" href=""></a>

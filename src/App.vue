@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import HeaderBlock from '@/components/header-block.vue'
-import OurServices from '@/components/our-services.vue'
-import CalculateBlock from '@/components/calculate-block.vue'
-import OurCars from '@/components/our-cars.vue'
-import AboutUs from '@/components/about-us.vue'
-import ContactsBlock from '@/components/contacts-block.vue'
-import RequestBlock from '@/components/footer-block.vue'
+import HeaderBlock from '@/components/header-block.vue';
+import OurServices from '@/components/our-services.vue';
+import CalculateBlock from '@/components/calculate-block.vue';
+import OurCars from '@/components/our-cars.vue';
+import AboutUs from '@/components/about-us.vue';
+import ContactsBlock from '@/components/contacts-block.vue';
+import RequestBlock from '@/components/footer-block.vue';
 import { onMounted, onBeforeUnmount, ref } from 'vue';
-import GoBackBtn from '@/components/go-back-btn.vue'
 
 const isPhone = ref();
 const onResize = () => {
