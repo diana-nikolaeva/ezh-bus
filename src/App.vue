@@ -9,14 +9,18 @@ import RequestBlock from '@/components/footer-block.vue';
 import { onMounted, onBeforeUnmount, ref } from 'vue';
 
 const isPhone = ref();
-const onResize = () => {
 
-  isPhone.value = window.innerWidth <= 865;
+if (typeof window !== 'undefined') {
+  const onResize = () => {
+
+    isPhone.value = window.innerWidth <= 865;
+  }
+
+  onMounted(() => window.addEventListener('resize', onResize));
+  onBeforeUnmount(() => window.removeEventListener('resize', onResize));
+  onResize();
 }
 
-onMounted(() => window.addEventListener('resize', onResize));
-onBeforeUnmount(() => window.removeEventListener('resize', onResize));
-onResize();
 
 </script>
 

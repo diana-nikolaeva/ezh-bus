@@ -7,11 +7,14 @@ import CalculateForm from '@/components/calculate-form.vue'
   <div class="calculate-block-container">
     <div class="title-block">
       <h3>Калькулятор стоимости вашей поездки</h3>
-      <img src="../assets/calc-bcgr.png" alt="calculate">
+      <picture>
+        <source srcset="../assets/calc-bcgr.webp" type="image/webp">
+        <source srcset="../assets/calc-bcgr.avif" type="image/avif">
+        <img src="../assets/calc-bcgr.png" alt="calculate">
+      </picture>
     </div>
     <calculate-form></calculate-form>
   </div>
-
 </template>
 
 <style scoped>
@@ -45,6 +48,8 @@ import CalculateForm from '@/components/calculate-form.vue'
         margin-top: 39px;
         margin-left: 46px;
         margin-bottom: 20px;
+        z-index: 10;
+        position: relative;
       }
       img{
         max-height: 100%;

@@ -24,7 +24,6 @@ function isRed (myIndex: number): boolean {
           class="carousel-service"
           :class="{ red: isRed(index) }"
           :img-path="slide.imgBcgr"
-          :link="slide.link"
           :title="slide.title"
           :description="slide.description"
         ></service-component>

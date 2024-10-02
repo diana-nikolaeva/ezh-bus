@@ -62,12 +62,13 @@ const onSubmit = (e:Event) => {
           <input v-model="formState.phone" :placeholder="placeholders.phone.value">
         </div>
         <select v-model="formState.service" name="services" id="">
-          <option>Развозка сотрудников</option>
-          <option>Детские перевозки</option>
-          <option>Аренда авто</option>
-          <option>Обслуживание мероприятий</option>
-          <option>Трансферные перевозки</option>
-          <option>Туристическая развозка</option>
+          <option value="">Выберите услугу</option>
+          <option value="employees">Развозка сотрудников</option>
+          <option value="kids">Детские перевозки</option>
+          <option value="rent">Аренда авто</option>
+          <option value="event">Обслуживание мероприятий</option>
+          <option value="transfer">Трансферные перевозки</option>
+          <option value="tourist">Туристическая развозка</option>
         </select>
         <input v-model="formState.time" type="text" placeholder="Удобное время для звонка">
         <textarea v-model="formState.comments" placeholder="Оставьте свой комментарий"></textarea>

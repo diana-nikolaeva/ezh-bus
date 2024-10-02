@@ -8,7 +8,7 @@
     <h2>контакты.</h2>
     <div class="container-contact-block">
       <div class="maps">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae90c77c578d6659d60a671c2a0c3cfeeb46cebe2afac01b781ed3ad6a02595d3&amp;source=constructor"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2003.87653558808!2d30.47602017738414!3d59.85119056913918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46962f6989903c1b%3A0x349637947f612035!2z0JHQpiAi0J7QsdGD0YXQvtCy0Yot0KbQtdC90YLRgCI!5e0!3m2!1sru!2sru!4v1727857291817!5m2!1sru!2sru"></iframe>
       </div>
       <div>
         <div class="order-call">
@@ -22,7 +22,7 @@
         </div>
         <div class="address-container">
           <img src="../assets/navigate-icon.png" alt="" class="navigate-icon-ezh-bus">
-          <div class="address">Санкт-Петербург, Новороссийская 26/2 офис 108</div>
+          <div class="address">Санкт-Петербург, Обуховской обороны д. 271,<br/> БЦ "Обуховъ-Центр"</div>
         </div>
         <a href="" class="privacy"> Политика конфиденциальности</a>
       </div>

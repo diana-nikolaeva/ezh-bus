@@ -21,7 +21,10 @@
       <div class="third-layer"></div>
       <div class="fourth-layer"></div>
       <figure>
-        <img src="../assets/cars-main-banner.png" alt="">
+        <picture>
+          <source srcset="../assets/cars-main-banner.avif" type="image/avif">
+          <img src="../assets/cars-main-banner.png" alt="">
+        </picture>
       </figure>
     </div>
     <button class="btn btn-main-banner">

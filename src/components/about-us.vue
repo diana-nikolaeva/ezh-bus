@@ -7,7 +7,10 @@
   <h2 class="about-us-title">о нас.</h2>
   <section class="about-us-block">
     <div class="banner">
-      <img src="../assets/about-us-banner.png" alt="about-ezh-bus-banner">
+      <picture>
+        <source srcset="../assets/about-us-banner.avif" type="image/avif">
+        <img src="../assets/about-us-banner.png" alt="about-ezh-bus-banner">
+      </picture>
     </div>
     <div class="about-us">
       <h3>о нас.</h3>

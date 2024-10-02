@@ -4,7 +4,6 @@
       <div class="service black front">
         <img :src="imgPath" alt="">
         <h3>{{title}}</h3>
-        <a :href="link">Подробнее</a>
       </div>
       <div class="service back">
         <h4>{{title}}</h4>
